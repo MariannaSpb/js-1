@@ -5,7 +5,7 @@
 
 
 function reverseWords (str) {
-    var array = str.split(' '); //массив слов
+    var array = str.split(' '); 
     var newSentence = array.map(function(item) {
         return item.split('').reverse().join('')
     })

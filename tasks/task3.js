@@ -6,12 +6,12 @@
 // toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
 
 function toCamelCase (str) {
-    // var new = word.indexOf('-')
+    
     var arr = str.split(/-|_/gm); //массив слов по разделителям
     var firstPart = arr[0] //сохранили первую часть, тип строка
     var secondPart = arr.filter(function (item, index) {
         return index > 0;
-    }); // новый массив из остатка слов
+    }); 
 
     var newStr = [];
     secondPart.forEach(function(item) {

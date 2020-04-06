@@ -10,11 +10,11 @@
 
 
 function splitAndMerge (str, sp) {
-    var sentence = str.split(' '); //делим предложение на слова, вернулся массив слов
+    var sentence = str.split(' '); 
 
     var characters = sentence.map(function(word) {
         return word.split('')
-    }); //разделить каждое слово на символы, вернули массивы с символами
+    }); 
 
     var mergeCharacters = characters.map(function(char) {
         return char.join(sp);

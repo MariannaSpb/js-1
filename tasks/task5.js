@@ -15,15 +15,20 @@
 // stringExpansion('abcde') === 'abcde'
 // Your code should be able to work for both lower and capital case letters.
 
-// function stringExpansion (str) {
-//     var arr = str.split('');
-//     var newStr = arr.reduce(function(result, item) {
-//         return arr[0] == parseInt(arr[0]) ?   : result
-        
-//     }, '');
 
-//     return newStr;
-// }
 
 stringExpansion('3d332f2a')  //'dddffaa'
 
+//String.match — о ищет строку и возвращает массив с найденными значениями. 
+//принимает один аргумент — регулярное выражение. Если найти строку удалось, 
+//String.match вернёт массив с тем, что нашёл:
+
+function stringExpansion (str) {
+  var pattern = /\d\D/g;
+  var newArr = str.match(pattern);
+  return newArr
+}
+
+stringExpansion('3d332f2a')
+
+//пока в процессе

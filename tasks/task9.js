@@ -21,5 +21,17 @@ function countDown (num) {
 
 countDown(3) // 3 2 1 0
 
+//FIXED:
+function countDown(num) {
+  var timer = setInterval(function () {
+      if (num < 0) {
+          clearInterval(timer);
+      } else {
+          console.log(num);
+          num--;
+      }
+  }, 1000);
+};
+
 
 

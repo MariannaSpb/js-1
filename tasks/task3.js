@@ -5,22 +5,18 @@
 // toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
 // toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
 
-function toCamelCase (str) {
-    
-    var arr = str.split(/-|_/gm); //массив слов по разделителям
-    var firstPart = arr[0] //сохранили первую часть, тип строка
-    var secondPart = arr.filter(function (item, index) {
-        return index > 0;
-    }); 
 
-    var newStr = [];
-    secondPart.forEach(function(item) {
-        var result = item.charAt(0).toUpperCase() + item.substr(1);
-        newStr.push(result);
-        return newStr;
-    });
-    return firstPart + newStr.join('');
-}
+
+//FIXED
+
+function toCamelCase(str) {
+    var arr = str.split(/-|_/gm); //массив слов по разделителям
+    return arr.map(function (word, index) {
+        return index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+    }).join('');
+};
+
+
 
 toCamelCase("the-stealth-warrior"); //"theStealthWarrior"
 toCamelCase("The_Stealth_Warrior") // "TheStealthWarrior"

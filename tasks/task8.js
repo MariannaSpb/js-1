@@ -15,3 +15,18 @@ function sum() {
 
 sum(1,3,5,7); //should return 16
 sum(1,1,1,1); //4 
+
+
+//FIXED
+function sum() {
+    var props = [].slice.call(arguments);
+    return (function introFunc(props) {
+        if (props.length === 0) {
+            return 0;
+        }
+        return props.pop() + introFunc(props);
+    })(props);
+};
+
+sum(1,3,5,7); //should return 16
+sum(1,1,1,1); //4 

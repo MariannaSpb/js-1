@@ -8,21 +8,16 @@
 // splitAndMerge("My name is John"," ") should return "M y n a m e i s J o h n"
 // splitAndMerge("Hello World!",",") should return "H,e,l,l,o W,o,r,l,d,!"
 
+// FIXED:
 
 function splitAndMerge (str, sp) {
     var sentence = str.split(' '); 
 
-    var characters = sentence.map(function(word) {
-        return word.split('')
-    }); 
-
-    var mergeCharacters = characters.map(function(char) {
-        return char.join(sp);
-    });
-    var newSentence = mergeCharacters.join(' ');
-    return newSentence
+    return sentence.map(function (word) {
+        return word.split('').join(sp);
+    }).join(' ');
 }
+splitAndMerge("My name is John"," ") //"M y n a m e i s J o h n"
 
 //splitAndMerge("My name is John"," ") "M y n a m e i s J o h n"
 //splitAndMerge("Hello World!",",") return "H,e,l,l,o W,o,r,l,d,!"
-

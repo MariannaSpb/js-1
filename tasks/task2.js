@@ -10,3 +10,12 @@ function convert(obj) {
 }
 
 //convert({name: 'Jeremy', age: 24, role: 'Software Engineer'})
+
+//FIXED:
+//es5
+function convert(obj) {
+    var keysOfObject = Object.keys(obj);
+    return keysOfObject.map(function (key) {
+        return [key, obj[key]];
+    });
+};
